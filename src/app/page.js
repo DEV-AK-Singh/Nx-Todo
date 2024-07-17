@@ -1,10 +1,11 @@
 "use client";
-import Link from "next/link";
-import TableData from "./components/tableData";
-import AlertBox from "./components/AlertBox";
+
 import { useState } from "react";
+import Link from "next/link";
+import Header from "@/lib/components/Header";
+import TableData from "@/lib/components/TableData";
+import AlertBox from "@/lib/components/AlertBox";
 import { deleteData } from "@/lib/controllers/taskController";
-import Header from "./components/Header";
 
 export default function Tasks() {
 

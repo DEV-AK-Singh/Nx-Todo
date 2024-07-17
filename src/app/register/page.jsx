@@ -1,10 +1,10 @@
 'use client'
 
-import { addData } from "@/lib/controllers/taskController";
 import moment from "moment";
 import { useState } from "react";
-import Header from "../components/Header";
 import { useRouter } from 'next/navigation';
+import Header from "@/lib/components/Header";
+import { addData } from "@/lib/controllers/taskController";
 
 const KeyBoardButton = ({handleClick}) => {
   return (
