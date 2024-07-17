@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.b {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7) !important;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+}
