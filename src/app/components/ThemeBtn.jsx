@@ -155,32 +155,29 @@ const LightBtn = ({changeMode}) => {
 };
 
 const ThemeBtn = () => { 
-    const [mode,setMode] = useState(window.localStorage.getItem("theme-mode"));
+    const [mode,setMode] = useState("");
     const changeMode = () => {
-        let currMode = window.localStorage.getItem("theme-mode");
+        let currMode = localStorage.getItem("theme-mode");
         if(currMode=="dark"){
           setMode("light")
-          window.localStorage.setItem("theme-mode","light");
+          localStorage.setItem("theme-mode","light");
           const htmlCont = document.getElementsByTagName("html")[0];
           htmlCont.setAttribute("data-theme", "light");
         }else{
           setMode("dark")
-          window.localStorage.setItem("theme-mode","dark");
+          localStorage.setItem("theme-mode","dark");
           const htmlCont = document.getElementsByTagName("html")[0];
           htmlCont.setAttribute("data-theme", "dark");
         }
     }
     useEffect(()=>{
-        if(!mode){
-          window.localStorage.setItem("theme-mode","light");
+        let themeMode = localStorage.getItem("theme-mode");
+        if(!themeMode){
+          localStorage.setItem("theme-mode","light");
           changeMode();
         }
-        else if(mode=="light"){
-          const htmlCont = document.getElementsByTagName("html")[0];
-          htmlCont.setAttribute("data-theme", "light");
-        }else{
-          const htmlCont = document.getElementsByTagName("html")[0];
-          htmlCont.setAttribute("data-theme", "dark");
+        else {
+          changeMode();
         }
     },[])
   return <div>{mode == "dark" ? <LightBtn changeMode={changeMode}/> : <DarkBtn changeMode={changeMode}/>}</div>;
