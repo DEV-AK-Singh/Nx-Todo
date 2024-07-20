@@ -1,7 +1,7 @@
 
-# Next-Todo App
+# NxTodo App
 
-## [Visit Website Here..](https://next-todo.vercel.co/)
+## [Visit Website Here..](https://nxtodo.vercel.app)
 
 ![Preview](preview-1.png)
 
