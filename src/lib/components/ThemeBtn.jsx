@@ -8,7 +8,7 @@ const DarkBtn = ({changeMode}) => {
       <button
         onClick={changeMode}
       >
-        <i class="bi bi-moon-stars-fill" style={{fontSize:"36px"}}></i>
+        <i className="bi bi-moon-stars-fill" style={{fontSize:"36px"}}></i>
       </button>
     </>
   );
@@ -20,7 +20,7 @@ const LightBtn = ({changeMode}) => {
       <button
         onClick={changeMode}
       >
-        <i class="bi bi-brightness-high-fill" style={{fontSize:"36px"}}></i>
+        <i className="bi bi-brightness-high-fill" style={{fontSize:"36px"}}></i>
       </button>
     </>
   );

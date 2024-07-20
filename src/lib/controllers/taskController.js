@@ -1,6 +1,9 @@
 export const fetchDataByID = async (id) => {
-  const data = await fetch(`${process.env.BASE_URL}/api/tasks/${id}`, {
+  const data = await fetch(`https://nxtodo.vercel.app/api/tasks/${id}`, {
     method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin":"https://nxtodo.vercel.app"
+    }
   })
     .then((response) => {
       return response.json();
@@ -12,7 +15,12 @@ export const fetchDataByID = async (id) => {
 };
 
 export const fetchAllData = async () => {
-  const data = await fetch(`${process.env.BASE_URL}/api/tasks`, { method: "GET" })
+  const data = await fetch(`https://nxtodo.vercel.app/api/tasks`, {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin":"https://nxtodo.vercel.app"
+    }
+  })
     .then((response) => {
       return response.json();
     })
@@ -23,10 +31,10 @@ export const fetchAllData = async () => {
 };
 
 export const addData = async (body) => {
-  const data = await fetch(`${process.env.BASE_URL}/api/tasks`, {
+  const data = await fetch(`https://nxtodo.vercel.app/api/tasks`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin":"https://nxtodo.vercel.app" },
+    body: JSON.stringify(body)
   })
     .then((response) => {
       return response.json();
@@ -38,9 +46,9 @@ export const addData = async (body) => {
 };
 
 export const updateData = async (body) => {
-  const data = await fetch(`${process.env.BASE_URL}/api/tasks`, {
+  const data = await fetch(`https://nxtodo.vercel.app/api/tasks`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin":"https://nxtodo.vercel.app" },
     body: JSON.stringify(body),
   })
     .then((response) => {
@@ -53,9 +61,9 @@ export const updateData = async (body) => {
 };
 
 export const deleteData = async (body) => {
-  const data = await fetch(`${process.env.BASE_URL}/api/tasks`, {
+  const data = await fetch(`https://nxtodo.vercel.app/api/tasks`, {
     method: "DELETE",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin":"https://nxtodo.vercel.app" },
     body: JSON.stringify(body),
   })
     .then((response) => {

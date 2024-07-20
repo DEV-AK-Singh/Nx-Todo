@@ -16,7 +16,7 @@ const TableRow = ({ task, index, deleteTask, tKey }) => {
                 deleteTask(task._id);
               }}
             >
-              <i class="bi bi-trash" style={{fontSize:"16px"}}></i>
+              <i className="bi bi-trash" style={{fontSize:"16px"}}></i>
             </button>
           </label>
         </th>
