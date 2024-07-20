@@ -16,20 +16,7 @@ const TableRow = ({ task, index, deleteTask, tKey }) => {
                 deleteTask(task._id);
               }}
             >
-              {/* <Image src="/delete.svg" height={24} width={24} alt="delete button"/> */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <i class="bi bi-trash" style={{fontSize:"16px"}}></i>
             </button>
           </label>
         </th>
@@ -50,7 +37,7 @@ const TableRow = ({ task, index, deleteTask, tKey }) => {
         <td>{task.priority}</td>
         <th>
           <Link
-            className="btn btn-outline btn-xs rounded-none"
+            className="btn btn-ghost btn-outline btn-sm rounded-none"
             href={`/update/${task._id}`}
           >
             Edit Task

@@ -35,37 +35,39 @@ export default function Tasks() {
   };
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
+    <>
       <Header/>
-      <div className="px-4">
-        <div className="flex justify-between items-center ">
-          <h1 className="text-3xl py-4 font-bold">Todo-App</h1>
-          <Link
-            className="btn btn-ghost btn-outline btn-sm rounded-none"
-            href={"/register"}
+      <div className="h-screen w-screen flex justify-center items-center">
+        <div className="px-4">
+          <div className="flex justify-between items-center ">
+            <h1 className="text-3xl py-4 font-bold">Todo-App</h1>
+            <Link
+              className="btn btn-ghost btn-outline btn-sm rounded-none"
+              href={"/register"}
+            >
+              Add Task
+            </Link>
+          </div>
+          <table
+            className="table rounded-none h-96 overflow-y-scroll relative "
+            style={{ display: "block" }}
           >
-            Add Task
-          </Link>
+            <thead className="sticky top-0 bg-black text-white">
+              <tr>
+                <th className="text-center">Done</th>
+                <th className="text-center">SNO.</th>
+                <th>Task</th>
+                <th className="text-center">Priority</th>
+                <th className="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <TableData tasks={tasks} setTasks={setTasks} deleteTask={deleteTask} />
+            </tbody>
+          </table>
         </div>
-        <table
-          className="table rounded-none h-96 overflow-y-scroll relative "
-          style={{ display: "block" }}
-        >
-          <thead className="sticky top-0 bg-black text-white">
-            <tr>
-              <th className="text-center">Done</th>
-              <th className="text-center">SNO.</th>
-              <th>Task</th>
-              <th className="text-center">Priority</th>
-              <th className="text-center">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <TableData tasks={tasks} setTasks={setTasks} deleteTask={deleteTask} />
-          </tbody>
-        </table>
+        {deleteInit ? <AlertBox cancelDelete={cancelDelete} /> : ""}
       </div>
-      {deleteInit ? <AlertBox cancelDelete={cancelDelete} /> : ""}
-    </div>
+    </>
   );
 }

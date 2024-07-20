@@ -3,8 +3,8 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Header from "@/lib/components/Header";
 import { fetchDataByID, updateData } from "@/lib/controllers/taskController";
+import Header from "@/lib/components/Header";
 
 const KeyBoardButton = ({handleClick}) => {
   return (
@@ -70,23 +70,25 @@ export default function Update({params}) {
   },[])
 
   return (
-    <div className={`h-screen w-screen flex justify-center items-center`}>
+    <>
       <Header/>
-      <label className="form-control w-full max-w-sm">
-        <div className="label">
-          <span className="label-text">Edit your task details.</span>
-          <span className="label-text-alt cursor-pointer" onClick={changePriority}>{priorities[priority]} : Priority</span>
-        </div>
-        <div className="relative">
-          <KeyBoardButton handleClick={handleClick}/>
-          <input type="text" placeholder="Type here.." className={`input input-bordered w-full max-w-sm`} value={myTask} onKeyDown={handleSubmit} onChange={(e)=>{setMyTask(e.target.value)}}/>
-        </div>
-        <div className="label">
-          <span className="label-text-alt">{myDate}</span>
-          <span className="label-text-alt">{myTime}</span>
-        </div>
-      </label>
-    </div>
+      <div className={`h-screen w-screen flex justify-center items-center`}>
+        <label className="form-control w-full max-w-sm">
+          <div className="label">
+            <span className="label-text">Edit your task details.</span>
+            <span className="label-text-alt cursor-pointer" onClick={changePriority}>{priorities[priority]} : Priority</span>
+          </div>
+          <div className="relative">
+            <KeyBoardButton handleClick={handleClick}/>
+            <input type="text" placeholder="Type here.." className={`input input-bordered w-full max-w-sm`} value={myTask} onKeyDown={handleSubmit} onChange={(e)=>{setMyTask(e.target.value)}}/>
+          </div>
+          <div className="label">
+            <span className="label-text-alt">{myDate}</span>
+            <span className="label-text-alt">{myTime}</span>
+          </div>
+        </label>
+      </div>
+    </>
   );
 }
 
