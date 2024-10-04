@@ -3,18 +3,21 @@
 
 ## [Visit Website Here..](https://nxtodo.vercel.app)
 
-![Preview](preview-1.png)
-
-![Preview](preview-2.png)
+## Project Overview
 
 A simple and intuitive to-do list app built with Next.js, MongoDB, and DaisyUI. This app allows you to manage your tasks efficiently, keeping you organized and productive. Stay organized and boost productivity with our intuitive to-do list app. Manage your tasks effortlessly with features like easy task addition, categorization, and synchronization across devices. Perfect for both personal and professional use, our user-friendly interface ensures you stay on top of your to-do list. Add, edit, and delete tasks with ease, and enjoy the satisfaction of checking off completed items.
 
-**Features:**
+## Features:
 
 - **Task Management**: Add, edit, and delete tasks with ease.
 - **Task Completion**: Mark tasks as completed.
 - **Responsive Design**: Optimized for all devices.
 - **Real-time Updates**: Tasks are updated in real-time using MongoDB.
+
+## Previews
+
+![Preview](preview-1.png)
+![Preview](preview-2.png)
 
 **Tech Stack:**
 
